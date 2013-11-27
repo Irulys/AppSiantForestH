@@ -1,0 +1,136 @@
+﻿@model IEnumerable<SaintForest.Models.Habitaciones>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista den Habitaciones</h2>
+
+<script>
+    function updateTextInput(val,id) {
+        document.getElementById(id).innerHTML = val+"0000";
+    }
+    $("#PrecioMe").click(function () { alert("Jquery Ok!"); });
+</script>
+ @if (ViewBag.IsCLiente || ViewBag.IsMucama)
+ {
+
+ }
+ else
+ {
+        <p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+ }
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <p>Tipo Habitacion
+@Html.DropDownList("TipoHabitacion", "Todas") @if(!ViewBag.IsCLiente){@Html.DropDownList("EstadoLimpieza", "Todas")}
+        </p>
+   <p>Precio Minimo  
+                @if (string.IsNullOrEmpty(@ViewBag.Me))
+                {
+                      <span id="Mi">  100000 </span>
+                }
+                else
+                {
+                     <span id="Mi">  @(ViewBag.Me)0000</span>
+                }
+
+               <input onchange="updateTextInput(this.value,'Mi');" min="10" id="PrecioMe" name="PrecioMe"  type="Range" value="@ViewBag.Me"/>
+    Precio Mayor 
+          @if (string.IsNullOrEmpty(@ViewBag.Me))
+          {
+                <span id="Ma"> 1000000 </span>}
+          else
+          {
+                  <span id="Ma"> @(ViewBag.Ma)0000</span>
+          }
+         <input  onchange="updateTextInput(this.value,'Ma');"   id="PrecioMa" name="PrecioMa"   type="Range"  max="100" value="@ViewBag.Ma"/>
+    </p> 
+    
+       <input value="Buscar" type="Submit"/>
+}
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreHabitacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dirrecion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoHabitaciones.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadoActivo1.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disponibilidad.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadoLimpieza1.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreHabitacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dirrecion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoHabitaciones.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstadoActivo1.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Disponibilidad.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstadoLimpieza1.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>
+        <td>
+            <div>
+            @if (ViewBag.IsCliente)
+            {
+             @Html.ActionLink("Reservar", "../Reservas/Create", new { id = item.Id }) <span>|</span>
+           
+            }
+            else if(ViewBag.IsMucama)
+                {
+             @Html.ActionLink("Edit", "Edit", new { id = item.Id }) <span>|</span>
+            }
+            else
+            {
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) <span>|</span>
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            }
+              @* @ViewBag.IsCliente; @ViewBag.IsMucama *@
+             @Html.ActionLink("Details", "Details", new { id = item.Id }) <span>|</span>  
+                </div>
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,109 @@
+﻿@model SaintForest.Models.DetallePedido
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>DetallePedido</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdPedido, "Pedidos")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdPedido", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdPedido)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdProducto, "Productos")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdProducto", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdProducto)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cantidad)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cantidad)
+            @Html.ValidationMessageFor(model => model.Cantidad)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Iva)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Iva)
+            @Html.ValidationMessageFor(model => model.Iva)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Ico)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Ico)
+            @Html.ValidationMessageFor(model => model.Ico)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TotalIva)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TotalIva)
+            @Html.ValidationMessageFor(model => model.TotalIva)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TotalIco)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TotalIco)
+            @Html.ValidationMessageFor(model => model.TotalIco)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValorTotal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ValorTotal)
+            @Html.ValidationMessageFor(model => model.ValorTotal)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descuento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descuento)
+            @Html.ValidationMessageFor(model => model.Descuento)
+        </div>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValorUnitario)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ValorUnitario)
+            @Html.ValidationMessageFor(model => model.ValorUnitario)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

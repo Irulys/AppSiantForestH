@@ -1,0 +1,74 @@
+﻿@model SaintForest.Models.Habitaciones
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Habitaciones</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NombreHabitacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NombreHabitacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Dirrecion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Dirrecion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TipoHabitaciones.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoHabitaciones.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EstadoActivo1.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EstadoActivo1.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Disponibilidad.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Disponibilidad.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EstadoLimpieza1.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EstadoLimpieza1.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Precio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Precio)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

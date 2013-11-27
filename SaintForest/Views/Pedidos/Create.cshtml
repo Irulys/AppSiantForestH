@@ -1,0 +1,107 @@
+﻿@model SaintForest.Models.Pedidos
+
+@{
+     
+           
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Pedidos</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdCliente, "Usuarios")
+        </div>
+
+        <div class="editor-field">
+            @if (ViewBag.IsCLiente) {
+                <div class="No">
+            @Html.DropDownList("IdCliente")
+        
+                </div>
+              <span>  @Session["Nombre"] @Session["Apellidos"] </span>
+            }else
+            {
+            @Html.DropDownList("IdCliente", String.Empty)
+        
+            }
+            
+        
+            @Html.ValidationMessageFor(model => model.IdCliente)
+        </div>
+        <div class="No">
+            <div class="editor-label">
+            @Html.LabelFor(model => model.FechaPedido)
+        </div>
+        <div class="editor-field">
+          <input class="text-box single-line" data-val="true" readonly data-val-date="El campo FechaPedido debe ser una fecha." id="FechaPedido" name="FechaPedido" type="datetime" value="2013/2/13">
+            @Html.ValidationMessageFor(model => model.FechaPedido)
+        </div>
+
+        </div>
+       
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaEntrega)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FechaEntrega)
+            @Html.ValidationMessageFor(model => model.FechaEntrega)
+        </div>
+        <div class="No">
+     <div class="editor-label">
+            @Html.LabelFor(model => model.ValorTotal)
+        </div>
+        <div class="editor-field">
+          <input class="text-box single-line" readonly data-val="true" data-val-number="El campo ValorTotal debe ser un número." data-val-required="El campo ValorTotal es obligatorio." id="ValorTotal" name="ValorTotal" type="text" value="0">
+            @Html.ValidationMessageFor(model => model.ValorTotal)
+        </div>
+
+        
+       
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Estado, "EstadosDelPedido")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Estado", String.Empty)
+            @Html.ValidationMessageFor(model => model.Estado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cerrado, "SiNo")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Cerrado", String.Empty)
+            @Html.ValidationMessageFor(model => model.Cerrado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdFactura, "Facturas")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdFactura", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdFactura)
+        </div>
+            </div>
+        <p>
+            <input type="submit" value="Create" />
+
+           
+
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

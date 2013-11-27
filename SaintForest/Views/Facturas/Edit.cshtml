@@ -1,0 +1,69 @@
+﻿@model SaintForest.Models.Facturas
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Facturas</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cliente, "Usuarios")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Cliente", String.Empty)
+            @Html.ValidationMessageFor(model => model.Cliente)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaFactura)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FechaFactura)
+            @Html.ValidationMessageFor(model => model.FechaFactura)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TotalFactura)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TotalFactura)
+            @Html.ValidationMessageFor(model => model.TotalFactura)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Estado, "EstadosDeLaFactura")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Estado", String.Empty)
+            @Html.ValidationMessageFor(model => model.Estado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cerrada, "SiNo")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Cerrada", String.Empty)
+            @Html.ValidationMessageFor(model => model.Cerrada)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

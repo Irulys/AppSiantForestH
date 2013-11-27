@@ -1,0 +1,96 @@
+﻿@model SaintForest.Models.Pedidos
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Pedidos</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+
+            @Html.LabelFor(model => model.IdCliente, "Usuarios")
+        </div>
+        <div class="editor-field">
+            @if(ViewBag.IsCliente)
+            {
+                @Session["Nombre"]
+            }else
+            {
+            @Html.DropDownList("IdCliente", String.Empty)
+            }
+            
+            @Html.ValidationMessageFor(model => model.IdCliente)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaPedido)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.FechaPedido, new { @readonly = "true" })
+            @Html.ValidationMessageFor(model => model.FechaPedido)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaEntrega)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.FechaEntrega,new { @readonly = "true" })
+            @Html.ValidationMessageFor(model => model.FechaEntrega)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValorTotal)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.ValorTotal,new { @readonly = "true" })
+            @Html.ValidationMessageFor(model => model.ValorTotal)
+        </div>
+        <div class="No">
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Estado, "EstadosDelPedido")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Estado", String.Empty)
+            @Html.ValidationMessageFor(model => model.Estado)
+        </div>
+            </div>
+
+        <div class="editor-label">
+           Cerrado
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Cerrado", String.Empty)
+            @Html.ValidationMessageFor(model => model.Cerrado)
+        </div>
+        <div class="No">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdFactura, "Facturas")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdFactura", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdFactura)
+        </div>
+            </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

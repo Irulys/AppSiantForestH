@@ -1,0 +1,86 @@
+﻿@model IEnumerable<SaintForest.Models.Pedidos>
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Lista de pedidos</h2>
+   
+    @Session["Nombre"] 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuarios.Nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaPedido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaEntrega)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadosDelPedido.Nombre)
+        </th>
+        <th>
+           Cerrado
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Facturas.Id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuarios.Nombres)  @Html.DisplayFor(modelItem =>item.Usuarios.Apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaPedido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaEntrega)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstadosDelPedido.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiNo.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Facturas.Id)
+        </td>
+        <td>
+           @* @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |*@
+            
+                @if(item.Cerrado==1)
+                {
+                  
+            <span>@Html.ActionLink("Details", "Details", new { id=item.Id })</span> 
+           // Html.ActionLink("Delete", "Delete", new { id=item.Id }); 
+            //Html.ActionLink("Agregar Iten", "../DetallesPedidos/create", new { id=item.Id });
+            <span>@Html.ActionLink("Ver Detalles", "../DetallesPedidos/Index", new { id = item.Id }) </span>
+                    }else{
+          <span>@Html.ActionLink("Edit", "Edit", new { id = item.Id }) </span>
+          <span>@Html.ActionLink("Details", "Details", new { id = item.Id }) </span>
+          <span> @Html.ActionLink("Delete", "Delete", new { id=item.Id })</span>
+          <span> @Html.ActionLink("Agregar Iten", "../DetallesPedidos/create", new { id = item.Id })</span>
+          <span> @Html.ActionLink("Ver Detalles", "../DetallesPedidos/Index", new { id = item.Id }) </span>
+                   }
+               
+            
+ </td>
+    </tr>
+}
+
+</table>

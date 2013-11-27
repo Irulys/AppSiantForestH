@@ -1,0 +1,29 @@
+﻿@model SaintForest.Models.UserModel
+
+@{
+    ViewBag.Title = "LogIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LogIn</h2>
+@using (Html.BeginForm())
+{
+    Html.ValidationSummary(true,"Faltan campos Requeridos");
+    <div>
+        <fieldset>
+            <legend>Fomulario de Log In</legend>
+            <div>@Html.LabelFor(u=>u.Email)</div>
+             <div>
+                 @Html.TextBoxFor(u=> u.Email)
+                 @Html.ValidationMessageFor(u=> u.Email)
+              </div>
+            <div>@Html.LabelFor(u=>u.Contrasena)</div>
+             <div>
+                <input data-val="true" data-val-length="El campo Contrasena debe ser una cadena con una longitud mínima de 6 y una longitud máxima de 50." data-val-length-max="50" data-val-length-min="6" data-val-required="El campo Contrasena es obligatorio." id="Contrasena" name="Contrasena" type="text" value="">
+                 @Html.ValidationMessageFor(u=> u.Contrasena)
+              </div>
+            @ViewBag.Result
+            <input type="submit" value="Log in"/>
+        </fieldset>
+    </div>
+}  

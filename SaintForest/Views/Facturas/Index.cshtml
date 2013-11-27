@@ -1,0 +1,65 @@
+﻿@model IEnumerable<SaintForest.Models.Facturas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+  @*  @Html.ActionLink("Create New", "Create")*@
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuarios.Nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaFactura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalFactura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadosDeLaFactura.EstadoFactura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SiNo.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuarios.Nombres)   @Html.DisplayFor(modelItem => item.Usuarios.Apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaFactura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalFactura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstadosDeLaFactura.EstadoFactura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiNo.Nombre)
+        </td>
+        <td>
+            @if (ViewBag.IsCliente)
+            {
+             @Html.ActionLink("Details", "Details", new { id=item.Id }) <span>|</span>
+           
+            }else{
+             @Html.ActionLink("Details", "Details", new { id=item.Id }) <span>|</span>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) <span>|</span>
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            }
+
+         
+             </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,158 @@
+﻿@model SaintForest.Models.Habitaciones
+
+@{
+    ViewBag.Title = "Edit";
+}
+ 
+<h2>Edit</h2>
+ 
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Habitaciones</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NombreHabitacion)
+        </div>
+        <div class="editor-field">
+            @if (ViewBag.IsCLiente || ViewBag.IsMucama)
+            {
+               @Html.TextBoxFor(model => model.NombreHabitacion, new {@readonly = "readonly" })
+            }else{
+                
+            @Html.EditorFor(model => model.NombreHabitacion)
+            }
+            @Html.ValidationMessageFor(model => model.NombreHabitacion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Dirrecion)
+        </div>
+        <div class="editor-field">
+              @if (ViewBag.IsCLiente || ViewBag.IsMucama)
+            {
+                @Html.TextBoxFor(model => model.Dirrecion, new {@readonly="readonly"})
+            }else{
+                
+             @Html.EditorFor(model => model.Dirrecion)
+            }
+          
+            @Html.ValidationMessageFor(model => model.Dirrecion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TipoHabitacion, "TipoHabitaciones")
+        </div>
+        <div class="editor-field">
+               @if (ViewBag.IsCLiente || ViewBag.IsMucama)
+            {
+                 
+                @Html.TextBoxFor(model => model.TipoHabitaciones.Nombre, new {@readonly="readonly"})  
+            }else{
+                 @Html.DropDownList("TipoHabitacion", String.Empty)
+            }
+           
+            @Html.ValidationMessageFor(model => model.TipoHabitacion)
+        </div>
+
+        @if (ViewBag.IsCliente || ViewBag.IsMucama)
+        {
+          <div class="No">
+                <div class="editor-label">
+            @Html.LabelFor(model => model.EstadoActivo, "EstadoActivo1")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("EstadoActivo", String.Empty)
+            @Html.ValidationMessageFor(model => model.EstadoActivo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Disponilidad, "Disponibilidad")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Disponilidad", String.Empty)
+            @Html.ValidationMessageFor(model => model.Disponilidad)
+        </div>
+
+       
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descripcion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descripcion)
+            @Html.ValidationMessageFor(model => model.Descripcion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Precio)
+        </div>
+        <div class="editor-field">
+             <input type="number" name="Precio" id="Precio" value='@ViewBag.Precio'/>
+            @Html.ValidationMessageFor(model => model.Precio)
+        </div>
+            </div>
+        }
+        else
+        {  
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EstadoActivo, "EstadoActivo1")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("EstadoActivo", String.Empty)
+            @Html.ValidationMessageFor(model => model.EstadoActivo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Disponilidad, "Disponibilidad")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Disponilidad", String.Empty)
+            @Html.ValidationMessageFor(model => model.Disponilidad)
+        </div>
+
+       
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descripcion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descripcion)
+            @Html.ValidationMessageFor(model => model.Descripcion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Precio)
+        </div>
+        <div class="editor-field">
+           <input type="number" name="Precio" id="Precio" value='@ViewBag.Precio'/>
+            @Html.ValidationMessageFor(model => model.Precio)
+        </div>
+        }
+         <div class="editor-label">
+            @Html.LabelFor(model => model.EstadoLimpieza, "EstadoLimpieza1")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("EstadoLimpieza", String.Empty)
+            @Html.ValidationMessageFor(model => model.EstadoLimpieza)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+        
+
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+   
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ModeloSaintForest.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModeloSaintForestStoreContainer">
+    <EntitySet Name="DetallePedido" EntityType="ModeloSaintForest.Store.DetallePedido" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Disponibilidad" EntityType="ModeloSaintForest.Store.Disponibilidad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EstadoActivo" EntityType="ModeloSaintForest.Store.EstadoActivo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EstadoDeLaReserva" EntityType="ModeloSaintForest.Store.EstadoDeLaReserva" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EstadoLimpieza" EntityType="ModeloSaintForest.Store.EstadoLimpieza" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EstadosDeLaFactura" EntityType="ModeloSaintForest.Store.EstadosDeLaFactura" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EstadosDelPedido" EntityType="ModeloSaintForest.Store.EstadosDelPedido" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Facturas" EntityType="ModeloSaintForest.Store.Facturas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Habitaciones" EntityType="ModeloSaintForest.Store.Habitaciones" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Imagenes" EntityType="ModeloSaintForest.Store.Imagenes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pedidos" EntityType="ModeloSaintForest.Store.Pedidos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Productos" EntityType="ModeloSaintForest.Store.Productos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Reservas" EntityType="ModeloSaintForest.Store.Reservas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="ModeloSaintForest.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SiNo" EntityType="ModeloSaintForest.Store.SiNo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoHabitaciones" EntityType="ModeloSaintForest.Store.TipoHabitaciones" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuarios" EntityType="ModeloSaintForest.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_DetallePedido_Pedidos" Association="ModeloSaintForest.Store.FK_DetallePedido_Pedidos">
+      <End Role="Pedidos" EntitySet="Pedidos" />
+      <End Role="DetallePedido" EntitySet="DetallePedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetallePedido_Productos" Association="ModeloSaintForest.Store.FK_DetallePedido_Productos">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="DetallePedido" EntitySet="DetallePedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Facturas_EstadosDeLaFactura" Association="ModeloSaintForest.Store.FK_Facturas_EstadosDeLaFactura">
+      <End Role="EstadosDeLaFactura" EntitySet="EstadosDeLaFactura" />
+      <End Role="Facturas" EntitySet="Facturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Facturas_SiNo" Association="ModeloSaintForest.Store.FK_Facturas_SiNo">
+      <End Role="SiNo" EntitySet="SiNo" />
+      <End Role="Facturas" EntitySet="Facturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Facturas_Usuarios" Association="ModeloSaintForest.Store.FK_Facturas_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Facturas" EntitySet="Facturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Habitaciones_Disponibilidad" Association="ModeloSaintForest.Store.FK_Habitaciones_Disponibilidad">
+      <End Role="Disponibilidad" EntitySet="Disponibilidad" />
+      <End Role="Habitaciones" EntitySet="Habitaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Habitaciones_EstadoActivo" Association="ModeloSaintForest.Store.FK_Habitaciones_EstadoActivo">
+      <End Role="EstadoActivo" EntitySet="EstadoActivo" />
+      <End Role="Habitaciones" EntitySet="Habitaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Habitaciones_EstadoLimpieza" Association="ModeloSaintForest.Store.FK_Habitaciones_EstadoLimpieza">
+      <End Role="EstadoLimpieza" EntitySet="EstadoLimpieza" />
+      <End Role="Habitaciones" EntitySet="Habitaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Habitaciones_TipoHabitaciones" Association="ModeloSaintForest.Store.FK_Habitaciones_TipoHabitaciones">
+      <End Role="TipoHabitaciones" EntitySet="TipoHabitaciones" />
+      <End Role="Habitaciones" EntitySet="Habitaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Imagenes_Habitaciones" Association="ModeloSaintForest.Store.FK_Imagenes_Habitaciones">
+      <End Role="Habitaciones" EntitySet="Habitaciones" />
+      <End Role="Imagenes" EntitySet="Imagenes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Imagenes_Productos" Association="ModeloSaintForest.Store.FK_Imagenes_Productos">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="Imagenes" EntitySet="Imagenes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedidos_EstadosDelPedido" Association="ModeloSaintForest.Store.FK_Pedidos_EstadosDelPedido">
+      <End Role="EstadosDelPedido" EntitySet="EstadosDelPedido" />
+      <End Role="Pedidos" EntitySet="Pedidos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedidos_Facturas" Association="ModeloSaintForest.Store.FK_Pedidos_Facturas">
+      <End Role="Facturas" EntitySet="Facturas" />
+      <End Role="Pedidos" EntitySet="Pedidos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedidos_SiNo" Association="ModeloSaintForest.Store.FK_Pedidos_SiNo">
+      <End Role="SiNo" EntitySet="SiNo" />
+      <End Role="Pedidos" EntitySet="Pedidos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedidos_Usuarios" Association="ModeloSaintForest.Store.FK_Pedidos_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Pedidos" EntitySet="Pedidos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_EstadoActivo" Association="ModeloSaintForest.Store.FK_Productos_EstadoActivo">
+      <End Role="EstadoActivo" EntitySet="EstadoActivo" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservas_EstadoDeLaReserva" Association="ModeloSaintForest.Store.FK_Reservas_EstadoDeLaReserva">
+      <End Role="EstadoDeLaReserva" EntitySet="EstadoDeLaReserva" />
+      <End Role="Reservas" EntitySet="Reservas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservas_Habitaciones" Association="ModeloSaintForest.Store.FK_Reservas_Habitaciones">
+      <End Role="Habitaciones" EntitySet="Habitaciones" />
+      <End Role="Reservas" EntitySet="Reservas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservas_Usuarios" Association="ModeloSaintForest.Store.FK_Reservas_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Reservas" EntitySet="Reservas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_EstadoActivo" Association="ModeloSaintForest.Store.FK_Usuarios_EstadoActivo">
+      <End Role="EstadoActivo" EntitySet="EstadoActivo" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Roles" Association="ModeloSaintForest.Store.FK_Usuarios_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="DetallePedido">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="IdPedido" Type="int" Nullable="false" />
+    <Property Name="IdProducto" Type="int" Nullable="false" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="Iva" Type="decimal" />
+    <Property Name="Ico" Type="decimal" />
+    <Property Name="TotalIva" Type="decimal" />
+    <Property Name="TotalIco" Type="decimal" />
+    <Property Name="ValorTotal" Type="decimal" />
+    <Property Name="Descuento" Type="decimal" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ValorUnitario" Type="decimal" />
+  </EntityType>
+  <EntityType Name="Disponibilidad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EstadoActivo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EstadoDeLaReserva">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Estado" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EstadoLimpieza">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EstadosDeLaFactura">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EstadoFactura" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EstadosDelPedido">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Facturas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Cliente" Type="int" Nullable="false" />
+    <Property Name="FechaFactura" Type="datetime" Nullable="false" />
+    <Property Name="TotalFactura" Type="decimal" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+    <Property Name="Cerrada" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Habitaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NombreHabitacion" Type="varchar" MaxLength="50" />
+    <Property Name="Dirrecion" Type="varchar" Nullable="false" MaxLength="260" />
+    <Property Name="TipoHabitacion" Type="int" Nullable="false" />
+    <Property Name="EstadoActivo" Type="int" Nullable="false" />
+    <Property Name="Disponilidad" Type="int" Nullable="false" />
+    <Property Name="EstadoLimpieza" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="450" />
+    <Property Name="Precio" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Imagenes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="IdArticulo" Type="int" />
+    <Property Name="RutaImagen" Type="varchar" MaxLength="250" />
+    <Property Name="IdHabitacion" Type="int" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Pedidos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdCliente" Type="int" />
+    <Property Name="FechaPedido" Type="datetime" />
+    <Property Name="FechaEntrega" Type="datetime" />
+    <Property Name="ValorTotal" Type="decimal" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+    <Property Name="Cerrado" Type="int" Nullable="false" />
+    <Property Name="IdFactura" Type="int" />
+  </EntityType>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Presentacion" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Iva" Type="decimal" />
+    <Property Name="Ico" Type="decimal" />
+    <Property Name="Valor" Type="decimal" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reservas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdCliente" Type="int" Nullable="false" />
+    <Property Name="IdHabitacion" Type="int" Nullable="false" />
+    <Property Name="FechaInical" Type="datetime" Nullable="false" />
+    <Property Name="FechaFinal" Type="datetime" Nullable="false" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NombreRol" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SiNo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TipoHabitaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombres" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Apellidos" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="IdRol" Type="int" Nullable="false" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Contraseña" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <Association Name="FK_DetallePedido_Pedidos">
+    <End Role="Pedidos" Type="ModeloSaintForest.Store.Pedidos" Multiplicity="1" />
+    <End Role="DetallePedido" Type="ModeloSaintForest.Store.DetallePedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedidos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetallePedido">
+        <PropertyRef Name="IdPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetallePedido_Productos">
+    <End Role="Productos" Type="ModeloSaintForest.Store.Productos" Multiplicity="1" />
+    <End Role="DetallePedido" Type="ModeloSaintForest.Store.DetallePedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetallePedido">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Facturas_EstadosDeLaFactura">
+    <End Role="EstadosDeLaFactura" Type="ModeloSaintForest.Store.EstadosDeLaFactura" Multiplicity="1" />
+    <End Role="Facturas" Type="ModeloSaintForest.Store.Facturas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadosDeLaFactura">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Facturas">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Facturas_SiNo">
+    <End Role="SiNo" Type="ModeloSaintForest.Store.SiNo" Multiplicity="1" />
+    <End Role="Facturas" Type="ModeloSaintForest.Store.Facturas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SiNo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Facturas">
+        <PropertyRef Name="Cerrada" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Facturas_Usuarios">
+    <End Role="Usuarios" Type="ModeloSaintForest.Store.Usuarios" Multiplicity="1" />
+    <End Role="Facturas" Type="ModeloSaintForest.Store.Facturas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Facturas">
+        <PropertyRef Name="Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Habitaciones_Disponibilidad">
+    <End Role="Disponibilidad" Type="ModeloSaintForest.Store.Disponibilidad" Multiplicity="1" />
+    <End Role="Habitaciones" Type="ModeloSaintForest.Store.Habitaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disponibilidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Habitaciones">
+        <PropertyRef Name="Disponilidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Habitaciones_EstadoActivo">
+    <End Role="EstadoActivo" Type="ModeloSaintForest.Store.EstadoActivo" Multiplicity="1" />
+    <End Role="Habitaciones" Type="ModeloSaintForest.Store.Habitaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoActivo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Habitaciones">
+        <PropertyRef Name="EstadoActivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Habitaciones_EstadoLimpieza">
+    <End Role="EstadoLimpieza" Type="ModeloSaintForest.Store.EstadoLimpieza" Multiplicity="1" />
+    <End Role="Habitaciones" Type="ModeloSaintForest.Store.Habitaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoLimpieza">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Habitaciones">
+        <PropertyRef Name="EstadoLimpieza" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Habitaciones_TipoHabitaciones">
+    <End Role="TipoHabitaciones" Type="ModeloSaintForest.Store.TipoHabitaciones" Multiplicity="1" />
+    <End Role="Habitaciones" Type="ModeloSaintForest.Store.Habitaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoHabitaciones">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Habitaciones">
+        <PropertyRef Name="TipoHabitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Imagenes_Habitaciones">
+    <End Role="Habitaciones" Type="ModeloSaintForest.Store.Habitaciones" Multiplicity="0..1" />
+    <End Role="Imagenes" Type="ModeloSaintForest.Store.Imagenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Habitaciones">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Imagenes">
+        <PropertyRef Name="IdHabitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Imagenes_Productos">
+    <End Role="Productos" Type="ModeloSaintForest.Store.Productos" Multiplicity="0..1" />
+    <End Role="Imagenes" Type="ModeloSaintForest.Store.Imagenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Imagenes">
+        <PropertyRef Name="IdArticulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedidos_EstadosDelPedido">
+    <End Role="EstadosDelPedido" Type="ModeloSaintForest.Store.EstadosDelPedido" Multiplicity="1" />
+    <End Role="Pedidos" Type="ModeloSaintForest.Store.Pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadosDelPedido">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pedidos">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedidos_Facturas">
+    <End Role="Facturas" Type="ModeloSaintForest.Store.Facturas" Multiplicity="0..1" />
+    <End Role="Pedidos" Type="ModeloSaintForest.Store.Pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Facturas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pedidos">
+        <PropertyRef Name="IdFactura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedidos_SiNo">
+    <End Role="SiNo" Type="ModeloSaintForest.Store.SiNo" Multiplicity="1" />
+    <End Role="Pedidos" Type="ModeloSaintForest.Store.Pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SiNo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pedidos">
+        <PropertyRef Name="Cerrado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedidos_Usuarios">
+    <End Role="Usuarios" Type="ModeloSaintForest.Store.Usuarios" Multiplicity="0..1" />
+    <End Role="Pedidos" Type="ModeloSaintForest.Store.Pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pedidos">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_EstadoActivo">
+    <End Role="EstadoActivo" Type="ModeloSaintForest.Store.EstadoActivo" Multiplicity="1" />
+    <End Role="Productos" Type="ModeloSaintForest.Store.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoActivo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservas_EstadoDeLaReserva">
+    <End Role="EstadoDeLaReserva" Type="ModeloSaintForest.Store.EstadoDeLaReserva" Multiplicity="0..1" />
+    <End Role="Reservas" Type="ModeloSaintForest.Store.Reservas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoDeLaReserva">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reservas">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservas_Habitaciones">
+    <End Role="Habitaciones" Type="ModeloSaintForest.Store.Habitaciones" Multiplicity="1" />
+    <End Role="Reservas" Type="ModeloSaintForest.Store.Reservas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Habitaciones">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reservas">
+        <PropertyRef Name="IdHabitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservas_Usuarios">
+    <End Role="Usuarios" Type="ModeloSaintForest.Store.Usuarios" Multiplicity="1" />
+    <End Role="Reservas" Type="ModeloSaintForest.Store.Reservas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reservas">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_EstadoActivo">
+    <End Role="EstadoActivo" Type="ModeloSaintForest.Store.EstadoActivo" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="ModeloSaintForest.Store.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoActivo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Roles">
+    <End Role="Roles" Type="ModeloSaintForest.Store.Roles" Multiplicity="1" />
+    <End Role="Usuarios" Type="ModeloSaintForest.Store.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="IdRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

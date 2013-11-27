@@ -1,0 +1,71 @@
+﻿@model SaintForest.Models.Habitaciones
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Habitaciones</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NombreHabitacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NombreHabitacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Dirrecion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Dirrecion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TipoHabitaciones.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoHabitaciones.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EstadoActivo1.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EstadoActivo1.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Disponibilidad.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Disponibilidad.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EstadoLimpieza1.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EstadoLimpieza1.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Precio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Precio)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

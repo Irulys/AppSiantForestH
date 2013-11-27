@@ -1,0 +1,50 @@
+﻿@model SaintForest.Models.Reservas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Reservas</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Usuarios.Nombres)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usuarios.Nombres)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Habitaciones.NombreHabitacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Habitaciones.NombreHabitacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FechaInical)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaInical)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FechaFinal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaFinal)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EstadoDeLaReserva.Estado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EstadoDeLaReserva.Estado)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

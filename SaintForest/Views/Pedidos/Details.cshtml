@@ -1,0 +1,70 @@
+﻿@model SaintForest.Models.Pedidos
+
+@{
+    ViewBag.Title = "Details";
+    
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Pedidos</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Usuarios.Nombres)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usuarios.Nombres)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FechaPedido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaPedido)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FechaEntrega)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaEntrega)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ValorTotal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ValorTotal)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EstadosDelPedido.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EstadosDelPedido.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SiNo.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SiNo.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Facturas.Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Facturas.Id)
+    </div>
+    <div>
+        Detalles Del Pedido
+        .....
+     
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

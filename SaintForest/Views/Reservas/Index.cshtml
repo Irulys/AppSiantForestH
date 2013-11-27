@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SaintForest.Models.Reservas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@if (ViewBag.IsCLiente)
+{
+
+}else{
+    
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+}
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuarios.Nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Habitaciones.NombreHabitacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaInical)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaFinal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuarios.Nombres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Habitaciones.NombreHabitacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaInical)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaFinal)
+        </td>
+        <td>
+            @if (ViewBag.IsCLiente)
+            {
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) <span>|</span>
+              @Html.ActionLink("Editar Habitacion", "../Habitaciones/Edit", new { id = item.IdHabitacion }) <span>|</span>
+            }else
+            {
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) <span>|</span>
+                    @Html.ActionLink("Details", "Details", new { id=item.Id }) <span>|</span>
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        
+            }
+            </td>
+    </tr>
+}
+
+</table>

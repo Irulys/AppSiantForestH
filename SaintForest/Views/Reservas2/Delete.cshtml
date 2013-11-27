@@ -1,0 +1,53 @@
+﻿@model SaintForest.Models.Reservas
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Reservas</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Usuarios.Nombres)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usuarios.Nombres)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Habitaciones.NombreHabitacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Habitaciones.NombreHabitacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FechaInical)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaInical)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FechaFinal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaFinal)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EstadoDeLaReserva.Estado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EstadoDeLaReserva.Estado)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

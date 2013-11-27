@@ -1,0 +1,67 @@
+﻿@model SaintForest.Models.Reservas
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Reservas</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdCliente, "Usuarios")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdCliente", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdCliente)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdHabitacion, "Habitaciones")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IdHabitacion", String.Empty)
+            @Html.ValidationMessageFor(model => model.IdHabitacion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaInical)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FechaInical)
+            @Html.ValidationMessageFor(model => model.FechaInical)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaFinal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FechaFinal)
+            @Html.ValidationMessageFor(model => model.FechaFinal)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Estado, "EstadoDeLaReserva")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Estado", String.Empty)
+            @Html.ValidationMessageFor(model => model.Estado)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
