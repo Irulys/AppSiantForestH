@@ -48,7 +48,7 @@
             @Html.LabelFor(model => model.Contraseña)
         </div>
         <div class="editor-field">
-          <input data-val="true" data-val-length="El campo Contrasena debe ser una cadena con una longitud mínima de 6 y una longitud máxima de 50." data-val-length-max="50" data-val-length-min="6" data-val-required="El campo Contrasena es obligatorio." id="Contrasena" name="Contrasena" type="Password" value="">
+            @Html.EditorFor(model => model.Contraseña)
             @Html.ValidationMessageFor(model => model.Contraseña)
         </div>
 

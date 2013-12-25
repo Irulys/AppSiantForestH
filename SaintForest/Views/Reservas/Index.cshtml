@@ -23,6 +23,9 @@
             @Html.DisplayNameFor(model => model.Habitaciones.NombreHabitacion)
         </th>
         <th>
+            Dirrecion de la habitacion
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.FechaInical)
         </th>
         <th>
@@ -39,6 +42,10 @@
         <td>
             @Html.DisplayFor(modelItem => item.Habitaciones.NombreHabitacion)
         </td>
+            <td>
+                @Html.DisplayFor(modelItem=> item.Habitaciones.Dirrecion)    
+            </td>
+    
         <td>
             @Html.DisplayFor(modelItem => item.FechaInical)
         </td>
