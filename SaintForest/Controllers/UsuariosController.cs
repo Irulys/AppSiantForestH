@@ -145,11 +145,19 @@ namespace SaintForest.Controllers
         {
             usuarios.IdRol = 1;
             usuarios.Estado = 1;
+            usuarios.Contraseña = "Milano";
             if (ModelState.IsValid)
             {
                 db.Usuarios.Add(usuarios);
-                db.SaveChanges();
-                return RedirectToAction("LogIn");
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception E) {
+                    return Content(
+                         string.Format("{0}, Valor de la contraseña {1}", E.Message,usuarios.Contraseña)); 
+                }
+                    return RedirectToAction("LogIn");
             }
 
             ViewBag.IdRol = new SelectList(db.Roles, "Id", "NombreRol", usuarios.IdRol);

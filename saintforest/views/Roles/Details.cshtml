@@ -1,0 +1,29 @@
+﻿@model SaintForest.Models.Roles
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Roles</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NombreRol)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NombreRol)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descripcion)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

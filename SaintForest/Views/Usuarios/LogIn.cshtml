@@ -5,13 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>LogIn</h2>
+<h2></h2>
 @using (Html.BeginForm())
 {
     Html.ValidationSummary(true,"Faltan campos Requeridos");
     <div>
         <fieldset>
-            <legend>Fomulario de Log In</legend>
+            <legend>Datos del administrador</legend>
             <div>@Html.LabelFor(u=>u.Email)</div>
              <div>
                  @Html.TextBoxFor(u=> u.Email)
