@@ -4,45 +4,45 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d6c39b11469f489489cd6a87057ec6ce" Name="Diagrama1" ZoomLevel="94">
-        <EntityTypeShape EntityType="ModeloSaintForest.DetallePedido" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloSaintForest.Disponibilidad" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloSaintForest.EstadoActivo" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloSaintForest.EstadoDeLaReserva" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloSaintForest.EstadoLimpieza" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloSaintForest.EstadosDeLaFactura" Width="1.5" PointX="9" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloSaintForest.EstadosDelPedido" Width="1.5" PointX="11.25" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloSaintForest.Facturas" Width="1.5" PointX="11.25" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloSaintForest.Habitaciones" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloSaintForest.Imagenes" Width="1.5" PointX="8.25" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloSaintForest.Pedidos" Width="1.5" PointX="13.5" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloSaintForest.Productos" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloSaintForest.Reservas" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloSaintForest.Roles" Width="1.5" PointX="3.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloSaintForest.SiNo" Width="1.5" PointX="9" PointY="12.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloSaintForest.TipoHabitaciones" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloSaintForest.Usuarios" Width="1.5" PointX="6" PointY="7" IsExpanded="true" />
-        <AssociationConnector Association="ModeloSaintForest.FK_DetallePedido_Pedidos" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_DetallePedido_Productos" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Habitaciones_Disponibilidad" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Habitaciones_EstadoActivo" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Productos_EstadoActivo" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Usuarios_EstadoActivo" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Reservas_EstadoDeLaReserva" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Habitaciones_EstadoLimpieza" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Facturas_EstadosDeLaFactura" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Pedidos_EstadosDelPedido" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Facturas_SiNo" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Facturas_Usuarios" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Pedidos_Facturas" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Habitaciones_TipoHabitaciones" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Imagenes_Habitaciones" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Reservas_Habitaciones" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Imagenes_Productos" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Pedidos_SiNo" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Pedidos_Usuarios" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Reservas_Usuarios" ManuallyRouted="false" />
-        <AssociationConnector Association="ModeloSaintForest.FK_Usuarios_Roles" ManuallyRouted="false" />
+      <Diagram DiagramId="d6c39b11469f489489cd6a87057ec6ce" Name="Diagrama1" ZoomLevel="60">
+        <EntityTypeShape EntityType="ModeloSaintForest.DetallePedido" PointX="12.75" PointY="13.625" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloSaintForest.Disponibilidad" PointX="3.75" PointY="7.875" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloSaintForest.EstadoActivo" PointX="0.75" PointY="11.125" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloSaintForest.EstadoDeLaReserva" PointX="6.25" PointY="1.625" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloSaintForest.EstadoLimpieza" PointX="3.75" PointY="15.25" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloSaintForest.EstadosDeLaFactura" PointX="6" PointY="6.125" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloSaintForest.EstadosDelPedido" PointX="8.25" PointY="3.5" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloSaintForest.Facturas" PointX="8.25" PointY="6.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloSaintForest.Habitaciones" PointX="6" PointY="10.25" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloSaintForest.Imagenes" PointX="8.25" PointY="15.25" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloSaintForest.Pedidos" PointX="10.5" PointY="8.5" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloSaintForest.Productos" PointX="4.75" PointY="17" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloSaintForest.Reservas" PointX="8.25" PointY="10.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloSaintForest.Roles" PointX="0.75" PointY="8.25" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloSaintForest.SiNo" PointX="6" PointY="3.5" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloSaintForest.TipoHabitaciones" PointX="3.75" PointY="4.625" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloSaintForest.Usuarios" PointX="3" PointY="10.5" Width="1.5" IsExpanded="true" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_DetallePedido_Pedidos" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_DetallePedido_Productos" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Habitaciones_Disponibilidad" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Habitaciones_EstadoActivo" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Productos_EstadoActivo" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Usuarios_EstadoActivo" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Reservas_EstadoDeLaReserva" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Habitaciones_EstadoLimpieza" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Facturas_EstadosDeLaFactura" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Pedidos_EstadosDelPedido" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Facturas_SiNo" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Facturas_Usuarios" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Pedidos_Facturas" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Habitaciones_TipoHabitaciones" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Imagenes_Habitaciones" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Reservas_Habitaciones" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Imagenes_Productos" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Pedidos_SiNo" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Pedidos_Usuarios" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Reservas_Usuarios" />
+        <AssociationConnector ManuallyRouted="false" Association="ModeloSaintForest.FK_Usuarios_Roles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
